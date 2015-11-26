@@ -1,8 +1,15 @@
 Rails.application.routes.draw do
+  get 'tempara/capture'
+
+  get 'data/capture'
+
   devise_for :users, path_names: { sign_in: "login", sign_out: "logout"}
   get 'home/index'
 
   get 'home/show'
+  
+  post "data/capture" => "data#capture"
+  post "tempara/capture" => "tempara#capture"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
